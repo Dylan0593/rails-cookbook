@@ -1,0 +1,7 @@
+<h1>create a new Category </h1>
+
+
+<%= simple_form_for [@category] do |f| %>
+  <%= f.input :name %>
+  <%= f.submit "Create category", class: "btn btn-primary" %>
+<% end %>
