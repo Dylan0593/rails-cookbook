@@ -9,7 +9,7 @@ class BookmarksController < ApplicationController
   def create
     @category = Category.find(params[:category_id])
     @bookmark = Bookmark.new(bookmark_params)
-    @bookmark.category_id = @category
+    @bookmark.category = @category
 
     if @bookmark.save
 

@@ -1,6 +1,29 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://plus.unsplash.com/premium_photo-1681401569921-e3e99499bfe9?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);">
+  <div class="container">
+    <h1><strong>Cookbook</strong>!</h1>
+    <p>Save your favourite recipes.</p>
+  </div>
+</div>
 
-<ul>
+<div class="container w-75">
+<div class="info mt-3">
+  <h2>List of Category</h2>
+  <%= link_to "New category", new_category_path, class:"btn btn-flat" %>
+</div>
+
+
+<div class="cards">
+
 <% @categories.each do |category| %>
-<li><%=link_to category.name, category_path(category)%></li>
+  <%= link_to category_path(category), style: "text-decoration: none;" do %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+      <div>
+        <h3><%=category.name%></h3>
+        <p><%= category.bookmarks.count%> Recipes</p>
+      </div>
+    </div>
+    <% end %>
 <% end %>
-</ul>
+</div>
+
+</div>
